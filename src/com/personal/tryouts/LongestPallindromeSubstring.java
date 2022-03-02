@@ -22,6 +22,6 @@ public class LongestPallindromeSubstring {
                 }
             }
         }
-        System.out.println("Number of palindrome substrings are = " + map.get(maxlen));
+        System.out.println("Longest palindrome substring is = " + map.get(maxlen));
     }
 }
