@@ -1,5 +1,14 @@
 package com.personal.tryouts;
 
+/**
+ * Rotating Along the Boundaries
+ *
+ * We can start at the first 4 corners of the given matrix and then keep incrementing the row and column indices to moves around.
+ *
+ * At any given moment we will have four corners lu (left-up),ld(left-down),ru(right-up),rd(right-down).
+ *
+ * To left rotate we will first swap the ru and ld,  then lu and ld and lastly ru and rd.
+ */
 public class MatrixLeftRotate {
 
 
