@@ -8,6 +8,12 @@ public class PrintSubArrays {
         printSubArrays(a, 0, 0);
     }
 
+    /**
+     * recursive approach
+     * @param a
+     * @param start
+     * @param end
+     */
     static void printSubArrays(int[] a, int start, int end) {
 
         if(a.length == end) {
