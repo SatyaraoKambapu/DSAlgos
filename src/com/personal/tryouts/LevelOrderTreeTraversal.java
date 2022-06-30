@@ -1,6 +1,7 @@
 package com.personal.tryouts;
-import java.io.*;
+
 import java.util.LinkedList;
+import java.util.Objects;
 import java.util.Queue;
 
 public class LevelOrderTreeTraversal {
@@ -21,7 +22,7 @@ public class LevelOrderTreeTraversal {
 
         // function to print Right view of
         // binary tree
-        void rightView(Node root)
+        void getViewByType(Node root, String viewType)
         {
             if (root == null) {
                 return;
@@ -41,10 +42,18 @@ public class LevelOrderTreeTraversal {
                     q.remove();
 
                     // print the last node of each level
-                    if (i == n - 1) {
-                        System.out.print(curr.data);
-                        System.out.print(" ");
+                    if(Objects.equals(viewType, "LEFT")) {
+                        if (i == 0) {
+                            System.out.print(curr.data);
+                            System.out.print(" ");
+                        }
+                    } else {
+                        if (i == n - 1) {
+                            System.out.print(curr.data);
+                            System.out.print(" ");
+                        }
                     }
+
 
                     // if left child is not null add it into
                     // the
@@ -79,7 +88,13 @@ public class LevelOrderTreeTraversal {
             tree.root.right.right = new Node(7);
             tree.root.right.left.right = new Node(8);
 
-            tree.rightView(tree.root);
+
+            System.out.println("Right View is Below :");
+            tree.getViewByType(tree.root, "RIGHT");
+            System.out.println();
+            System.out.println("Left View is Below :");
+            tree.getViewByType(tree.root, "LEFT");
+
         }
     }
 }
