@@ -7,7 +7,7 @@ public class FindLongestSubStringLengthWithoutRepeatingCharacters {
 
 
     public static void main(String[] args) {
-        String s = "abcda";
+        String s = "abbcd";
         System.out.println(longestUniqueSubstr(s));
     }
 

@@ -95,6 +95,41 @@ public class LevelOrderTreeTraversal {
             System.out.println("Left View is Below :");
             tree.getViewByType(tree.root, "LEFT");
 
+
+            int levelOfNode = tree.getLevelOfANode(tree.root, 2);
+            System.out.println("Levels = "+ levelOfNode);
+        }
+
+        /**
+         * this is wrong, yet to correct it
+         * @param root
+         * @param key
+         * @return
+         */
+        private int getLevelOfANode(Node root, int key) {
+
+            int level = 0;
+            if(root == null){
+                return 0;
+            }
+            Queue<Node> q = new LinkedList();
+            q.add(root);
+            while(!q.isEmpty()){
+                level++;
+                for(int i=0; i<q.size(); i++) {
+                    Node n = q.peek();
+                    q.remove();
+                    if(n.data == key) {
+                        return level;
+                    } else if(n.left != null){
+                        q.add(n.left);
+                    } else if(n.right != null){
+                        q.add(n.right);
+                    }
+                }
+            }
+
+            return level;
         }
     }
 }
